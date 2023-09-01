@@ -16,7 +16,7 @@ jobs:
 
   - name: test
     commands:
-      - echo "testing..."
+      - npm run test:program-rust
     resources:
       - name: my-build
 
