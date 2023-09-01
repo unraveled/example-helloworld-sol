@@ -12,13 +12,13 @@ jobs:
         - npm ci
         - npm run build:program-rust
     artifacts:
-      - name: target
+      - name: dist
 
   - name: test
     commands:
       - npm run test:program-rust
     resources:
-      - name: target
+      - name: dist
 
   - name: deploy
     commands:
