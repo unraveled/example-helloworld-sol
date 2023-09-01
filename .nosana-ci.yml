@@ -1,6 +1,6 @@
 # .nosana-ci.yml
 global:
-  image: alpine
+  image: nosana/solana
   trigger:
     push:
       branches:
@@ -9,8 +9,8 @@ global:
 jobs:
   - name: build
     commands:
-      - echo "building..."
-      - mkdir my-build
+        - npm ci
+        - npm run build:program-rust
     artifacts:
       - name: my-build
 
