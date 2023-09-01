@@ -1,11 +1,26 @@
+# .nosana-ci.yml
 global:
-  image: alpine:latest
-
+  image: alpine
   trigger:
-    branch:
-      - "*"
+    push:
+      branches:
+        - "*"
 
 jobs:
-  - name: Create README
+  - name: build
     commands:
-      - echo NOSANA_NODE
+      - echo "building..."
+    artifacts:
+      - name: my-build
+
+  - name: test
+    commands:
+      - echo "testing..."
+    resources:
+      - name: my-build
+
+  - name: deploy
+    commands:
+      - echo "deploying..."
+    resources:
+      - name: my-build
