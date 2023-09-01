@@ -10,6 +10,7 @@ jobs:
   - name: build
     commands:
       - echo "building..."
+      - mkdir my-build
     artifacts:
       - name: my-build
 
